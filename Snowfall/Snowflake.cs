@@ -14,13 +14,13 @@ public class Snowflake
     {
         _xMaxCoordinate = xMaxCoordinate;
         _yMaxCoordinate = yMaxCoordinate;
-        Initialize();
+        Reset();
     }
 
-    private void Initialize()
+    private void Reset()
     {
         _fallDirection = new Random().Next(2) == 1 ? FallDirectionEnum.Right : FallDirectionEnum.Left;
-        _x = new Random().Next(_xMaxCoordinate) + 1;
+        _x = new Random().Next(1, _xMaxCoordinate);
         _y = 0;
     }
 
@@ -36,8 +36,7 @@ public class Snowflake
         
         if (_y >= _yMaxCoordinate - 1)
         {
-            _y = 0;
-            _x = new Random().Next(_xMaxCoordinate) + 1;
+            Reset();
         }
         else
         {

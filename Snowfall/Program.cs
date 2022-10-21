@@ -5,7 +5,7 @@ using NetCoreAudio;
 public static class Program
 {
     private const string PathToAudio = "Resources/Snowfall.mp3";
-    private const int DelayInMilliseconds = 840;
+    private const int DelayInMilliseconds = 140;
     private static readonly Player Player = new ();
     private static readonly SnowflakesController SnowflakesController = new();
     private static readonly Snowdrift Snowdrift = new(5);
@@ -18,8 +18,7 @@ public static class Program
 
         while (!Console.KeyAvailable)
         {
-            SnowflakesController.MoveSnowflakes();
-            SnowflakesController.AddSnowflakes();
+            SnowflakesController.DrawSnowflakes();
             Snowdrift.Draw();
             Thread.Sleep(DelayInMilliseconds);
         }

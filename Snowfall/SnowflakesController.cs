@@ -14,12 +14,14 @@ public class SnowflakesController
         }
     }
 
-    public void MoveSnowflakes()
+    public void DrawSnowflakes()
     {
         foreach (var snowflake in _snowflakes)
         {
             snowflake.Move();
         }
+
+        AddSnowflakes();
     }
 
     public void AddSnowflakes()
